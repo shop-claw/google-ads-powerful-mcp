@@ -1,0 +1,4 @@
+mcp>=1.9,<2
+google-ads>=30.0.0
+python-dotenv>=1.0
+google-auth-oauthlib>=1.2

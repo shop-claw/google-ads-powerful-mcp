@@ -1,0 +1,31 @@
+{
+  "mcpServers": {
+    "google-ads-official": {
+      "command": "pipx",
+      "args": [
+        "run",
+        "--spec",
+        "git+https://github.com/googleads/google-ads-mcp.git",
+        "google-ads-mcp"
+      ],
+      "env": {
+        "GOOGLE_APPLICATION_CREDENTIALS": "/ABSOLUTE/PATH/TO/application_default_credentials.json",
+        "GOOGLE_ADS_DEVELOPER_TOKEN": "YOUR_DEVELOPER_TOKEN",
+        "GOOGLE_ADS_LOGIN_CUSTOMER_ID": "YOUR_MCC_ID_DIGITS_ONLY"
+      }
+    },
+    "shopclaw": {
+      "command": "/ABSOLUTE/PATH/TO/shopclaw/.venv/bin/python",
+      "args": ["-m", "shopclaw"],
+      "env": {
+        "GOOGLE_ADS_DEVELOPER_TOKEN": "YOUR_DEVELOPER_TOKEN",
+        "GOOGLE_ADS_CLIENT_ID": "YOUR_CLIENT_ID.apps.googleusercontent.com",
+        "GOOGLE_ADS_CLIENT_SECRET": "YOUR_CLIENT_SECRET",
+        "GOOGLE_ADS_REFRESH_TOKEN": "YOUR_REFRESH_TOKEN",
+        "GOOGLE_ADS_LOGIN_CUSTOMER_ID": "YOUR_MCC_ID_DIGITS_ONLY",
+        "SHOPCLAW_MAX_DAILY_BUDGET": "50",
+        "SHOPCLAW_ALLOWED_CUSTOMERS": ""
+      }
+    }
+  }
+}

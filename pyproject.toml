@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "shopclaw"
+version = "0.1.0"
+description = "Write layer MCP server for Google Ads. Pairs with Google's official read-only Google Ads MCP server. Every change is previewed and needs explicit confirmation."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+dependencies = [
+    "mcp>=1.9,<2",
+    "google-ads>=30.0.0",
+    "python-dotenv>=1.0",
+    "google-auth-oauthlib>=1.2",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+shopclaw = "shopclaw.server:main"
+shopclaw-setup = "shopclaw.setup:main"
+
+[tool.setuptools.packages.find]
+include = ["shopclaw*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
